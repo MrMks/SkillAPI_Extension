@@ -1,0 +1,6 @@
+name: SkillAPI_Extends
+main: com.github.mrmks.sapi_extends.Main
+version: ${version}
+depend: [SkillAPI,AttributePlus]
+softdepend:
+  - AttributeExtension
