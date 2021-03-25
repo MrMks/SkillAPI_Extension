@@ -2,7 +2,9 @@ package com.github.mrmks.sapi_extends;
 
 import com.github.mrmks.sapi_extends.bridge.BridgeListener;
 import com.github.mrmks.sapi_extends.compound.condition.ValueCompareCondition;
+import com.github.mrmks.sapi_extends.compound.mechanic.ManualTriggerMechanic;
 import com.github.mrmks.sapi_extends.trigger.EntityTookAPDamageTrigger;
+import com.github.mrmks.sapi_extends.trigger.ManualTrigger;
 import com.google.common.collect.ImmutableList;
 import com.sucy.skill.SkillAPI;
 import com.sucy.skill.api.SkillPlugin;
@@ -35,15 +37,18 @@ public class Main extends JavaPlugin implements SkillPlugin {
     @Override
     public List<CustomEffectComponent> getComponents() {
         return ImmutableList.of(
-                new ValueCompareCondition()
+                new ValueCompareCondition(),
+                new ManualTriggerMechanic()
                 //new ValueSumMechanic()
         );
     }
 
+    @SuppressWarnings("rawtypes")
     @Override
     public List<Trigger> getTriggers() {
         List<Trigger> list = new ArrayList<>(ImmutableList.of(
-                new EntityTookAPDamageTrigger()
+                new EntityTookAPDamageTrigger(),
+                new ManualTrigger()
         ));
         list.removeIf(t -> ComponentRegistry.getTrigger(t.getKey()) != null);
         return list;
