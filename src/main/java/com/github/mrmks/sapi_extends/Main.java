@@ -2,10 +2,8 @@ package com.github.mrmks.sapi_extends;
 
 import com.github.mrmks.sapi_extends.bridge.BridgeListener;
 import com.github.mrmks.sapi_extends.compound.condition.ValueCompareCondition;
-import com.github.mrmks.sapi_extends.compound.mechanic.ManualTriggerMechanic;
 import com.github.mrmks.sapi_extends.compound.mechanic.ValueAttributePlus;
 import com.github.mrmks.sapi_extends.trigger.EntityTookAPDamageTrigger;
-import com.github.mrmks.sapi_extends.trigger.ManualTrigger;
 import com.google.common.collect.ImmutableList;
 import com.sucy.skill.SkillAPI;
 import com.sucy.skill.api.SkillPlugin;
