@@ -39,7 +39,7 @@ public class Main extends JavaPlugin implements SkillPlugin {
     public List<CustomEffectComponent> getComponents() {
         return ImmutableList.of(
                 new ValueCompareCondition(),
-                new ManualTriggerMechanic(),
+                //new ManualTriggerMechanic(),
                 new ValueAttributePlus()
                 //new ValueSumMechanic()
         );
@@ -49,8 +49,7 @@ public class Main extends JavaPlugin implements SkillPlugin {
     @Override
     public List<Trigger> getTriggers() {
         List<Trigger> list = new ArrayList<>(ImmutableList.of(
-                new EntityTookAPDamageTrigger(),
-                new ManualTrigger()
+                new EntityTookAPDamageTrigger()
         ));
         list.removeIf(t -> ComponentRegistry.getTrigger(t.getKey()) != null);
         return list;

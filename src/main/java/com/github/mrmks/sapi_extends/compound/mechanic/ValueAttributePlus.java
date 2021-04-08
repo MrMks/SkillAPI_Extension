@@ -23,7 +23,7 @@ public class ValueAttributePlus extends CustomMechanic {
 
     @Override
     public String getKey() {
-        return "value_attributePlus";
+        return "value attributePlus";
     }
 
     public String getDisplayName() {
@@ -66,8 +66,8 @@ public class ValueAttributePlus extends CustomMechanic {
         if (random) {
             double min = doubles.length > 0 ? doubles[0].doubleValue() : 0;
             double max = doubles.length > 1 ? doubles[1].doubleValue() : 0;
-            if (max < min) max = min;
-            res = min + Rand.nextDouble() * (max - min);
+            if (max <= min) res = min;
+            else res = min + Rand.nextDouble() * (max - min);
         } else {
             int index = minMax ? 0 : 1;
             res = doubles.length > index ? doubles[index].doubleValue() : 0;
