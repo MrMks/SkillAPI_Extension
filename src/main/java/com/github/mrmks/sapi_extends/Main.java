@@ -3,6 +3,7 @@ package com.github.mrmks.sapi_extends;
 import com.github.mrmks.sapi_extends.bridge.BridgeListener;
 import com.github.mrmks.sapi_extends.compound.condition.ValueCompareCondition;
 import com.github.mrmks.sapi_extends.compound.mechanic.ManualTriggerMechanic;
+import com.github.mrmks.sapi_extends.compound.mechanic.ValueAttributePlus;
 import com.github.mrmks.sapi_extends.trigger.EntityTookAPDamageTrigger;
 import com.github.mrmks.sapi_extends.trigger.ManualTrigger;
 import com.google.common.collect.ImmutableList;
@@ -38,7 +39,8 @@ public class Main extends JavaPlugin implements SkillPlugin {
     public List<CustomEffectComponent> getComponents() {
         return ImmutableList.of(
                 new ValueCompareCondition(),
-                new ManualTriggerMechanic()
+                new ManualTriggerMechanic(),
+                new ValueAttributePlus()
                 //new ValueSumMechanic()
         );
     }
