@@ -1,6 +1,6 @@
-package com.github.mrmks.sapi_extends.compound.condition;
+package com.github.mrmks.mc.sapi_extension.compound.condition;
 
-import com.github.mrmks.sapi_extends.compound.CustomCondition;
+import com.github.mrmks.mc.sapi_extension.compound.CustomCondition;
 import com.google.common.collect.ImmutableList;
 import com.sucy.skill.dynamic.custom.EditorOption;
 import org.bukkit.entity.LivingEntity;

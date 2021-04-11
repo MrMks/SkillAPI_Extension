@@ -1,6 +1,6 @@
-package com.github.mrmks.sapi_extends.trigger;
+package com.github.mrmks.mc.sapi_extension.trigger;
 
-import com.github.mrmks.sapi_extends.event.ManualTriggerEvent;
+import com.github.mrmks.mc.sapi_extension.event.ManualTriggerEvent;
 import com.google.common.collect.ImmutableList;
 import com.sucy.skill.api.Settings;
 import com.sucy.skill.dynamic.ComponentType;

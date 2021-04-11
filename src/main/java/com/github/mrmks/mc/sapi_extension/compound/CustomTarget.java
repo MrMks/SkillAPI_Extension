@@ -1,4 +1,4 @@
-package com.github.mrmks.sapi_extends.compound;
+package com.github.mrmks.mc.sapi_extension.compound;
 
 import com.sucy.skill.dynamic.ComponentType;
 import com.sucy.skill.dynamic.custom.CustomEffectComponent;

@@ -1,7 +1,7 @@
-package com.github.mrmks.sapi_extends.compound.mechanic;
+package com.github.mrmks.mc.sapi_extension.compound.mechanic;
 
-import com.github.mrmks.sapi_extends.compound.CustomMechanic;
-import com.github.mrmks.sapi_extends.event.ManualTriggerEvent;
+import com.github.mrmks.mc.sapi_extension.compound.CustomMechanic;
+import com.github.mrmks.mc.sapi_extension.event.ManualTriggerEvent;
 import com.google.common.collect.ImmutableList;
 import com.sucy.skill.dynamic.custom.EditorOption;
 import org.bukkit.Bukkit;
@@ -12,7 +12,12 @@ import java.util.List;
 public class ManualTriggerMechanic extends CustomMechanic {
     @Override
     public String getKey() {
-        return "Manual_Trigger";
+        return "manual trigger";
+    }
+
+    @Override
+    public String getDisplayName() {
+        return "Manual Trigger";
     }
 
     @Override

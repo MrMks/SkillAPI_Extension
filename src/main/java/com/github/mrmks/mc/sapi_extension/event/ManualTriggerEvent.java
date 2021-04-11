@@ -1,4 +1,4 @@
-package com.github.mrmks.sapi_extends.event;
+package com.github.mrmks.mc.sapi_extension.event;
 
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.Event;

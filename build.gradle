@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'com.github.MrMks'
-version '0.0.2-8'
+version '0.3.1-build9'
 
 repositories {
     mavenCentral()
@@ -13,12 +13,11 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'junit', name: 'junit', version: '4.10'
     compileOnly 'org.bukkit:bukkit:1.12.2-R0.1-SNAPSHOT'
-    compileOnly files('libs/[2.3.7]AttributePlus.jar','libs/[1.1.0]AttributeExtension.jar')
 
-    compileOnly files("../Libraries/SkillAPI v1.9.jar")
-    compileOnly files("../Libraries/MCCore.jar")
+    compileOnly files("../libs/SkillAPI-1.9-premium.jar")
+    compileOnly files("../libs/MCCore-1.67.jar")
 }
 
 processResources {
