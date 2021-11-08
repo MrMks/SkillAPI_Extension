@@ -18,6 +18,11 @@ public class ManualTrigger implements CustomTrigger<ManualTriggerEvent> {
     }
 
     @Override
+    public String getDisplayName() {
+        return "Manual Trigger";
+    }
+
+    @Override
     public ComponentType getType() {
         return ComponentType.TRIGGER;
     }

@@ -1,7 +1,7 @@
 package com.github.mrmks.mc.sapi_extension;
 
 import com.github.mrmks.mc.sapi_extension.compound.condition.ValueCompareCondition;
-import com.github.mrmks.mc.sapi_extension.compound.mechanic.ManualTriggerMechanic;
+import com.github.mrmks.mc.sapi_extension.compound.mechanic.*;
 import com.github.mrmks.mc.sapi_extension.compound.target.EachTarget;
 import com.github.mrmks.mc.sapi_extension.trigger.ManualTrigger;
 import com.google.common.collect.ImmutableList;
@@ -35,9 +35,15 @@ public class Main extends JavaPlugin implements SkillPlugin {
     @Override
     public List<CustomEffectComponent> getComponents() {
         return ImmutableList.of(
-                new ValueCompareCondition(),
-                new ManualTriggerMechanic(),
-                new EachTarget()
+                new ValueCompareCondition(),        // 双值比较
+                new ManualTriggerMechanic(),        // 手动触发器
+                new EachTarget(),                   // 为每个对象应用子组件
+                new ValueDivideMechanic(),          // 除法
+                new ValueLogarithmMechanic(),       // Log_a_b
+                new ValueTrigonometricMechanic(),   // 三角函数
+                new ValuePowMechanic(),             // a^b
+                new ValuePositionMechanic(),        // x,y,z,yaw,pitch,world
+                new ValueClearMechanic()            // 手动清理记录值
                 //new ValueAttributePlus()
                 //new ValueSumMechanic()
         );
