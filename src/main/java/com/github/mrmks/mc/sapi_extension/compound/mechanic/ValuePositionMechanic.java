@@ -52,8 +52,8 @@ public class ValuePositionMechanic extends CustomMechanic {
             map.put(key.concat("x"), loc.getX());
             map.put(key.concat("y"), loc.getY());
             map.put(key.concat("z"), loc.getZ());
-            map.put(key.concat("yaw"), loc.getYaw());
-            map.put(key.concat("pitch"), loc.getPitch());
+            map.put(key.concat("yaw"), (double)loc.getYaw());
+            map.put(key.concat("pitch"), (double)loc.getPitch());
             map.put(key.concat("world"), loc.getWorld().getName());
             return true;
         } else {
