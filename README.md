@@ -10,6 +10,8 @@
  * [Value Trigonometric](#value-trigonometric)
  * [Value Position](#value-position)
  * [Value Clear](#value-clear)
+ * [Value Velocity](#value-velocity)
+ * [Value Target Count](#value-target-count)
 ## Details
 ### Value Compare
 **Type: Condition**
@@ -120,3 +122,26 @@ SkillAPI中，value的记录是随玩家而变化的，跨触发器与技能可�
   |关键字|名称|类型|描述| 
   |:---:|:---:|:---:|:---|
   |key|Key|Text(key)|要清理的值|
+
+### Value Velocity
+**Type: Mechanic**
+
+* 功能: **记录运动向量**
+* 参数列表
+
+  |关键字|名称|类型|描述| 
+  |:---:|:---:|:---:|:---|
+  |key|Key|Text(key)|记录值前缀|
+  |norm|Normalize|Dropdown\[false, true]|是否要将非零向量转换为单位向量（长度为1）|
+
+* 此组件一次记录多个值，后缀分别为_x,_y,_z,_l，对应三方向分向量长度与向量长度
+
+### Value Target Count
+**Type: Mechanic**
+
+* 功能: **记录目标数量**
+* 参数列表
+
+  |关键字|名称|类型|描述| 
+  |:---:|:---:|:---:|:---|
+  |key|Key|Text(key)|键|

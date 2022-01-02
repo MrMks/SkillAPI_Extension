@@ -3,20 +3,23 @@ plugins {
 }
 
 group 'com.github.mrmks.mc'
-version '0.4.1-build13'
+version '0.4.2-build14'
 
 repositories {
     mavenCentral()
     mavenLocal()
+    flatDir {dirs '../libs'}
     maven {url "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"}
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.10'
-    compileOnly 'org.bukkit:bukkit:1.12.2-R0.1-SNAPSHOT'
-
-    compileOnly files("../libs/SkillAPI-1.9-premium.jar")
-    compileOnly files("../libs/MCCore-1.67.jar")
+    testCompile 'junit:junit:4.13.2'
+    compileOnly('org.bukkit:bukkit:1.12.2-R0.1-SNAPSHOT') {
+        exclude group: 'junit'
+    }
+    compileOnly 'org.bukkit:craftbukkit:1.12.2'
+    compileOnly 'com.sucy:SkillAPI:1.9-premium'
+    compileOnly 'com.sucy:MCCore:1.67'
 }
 
 processResources {

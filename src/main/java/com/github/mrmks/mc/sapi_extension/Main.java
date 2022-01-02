@@ -43,7 +43,9 @@ public class Main extends JavaPlugin implements SkillPlugin {
                 new ValueTrigonometricMechanic(),   // 三角函数
                 new ValuePowMechanic(),             // a^b
                 new ValuePositionMechanic(),        // x,y,z,yaw,pitch,world
-                new ValueClearMechanic()            // 手动清理记录值
+                new ValueClearMechanic(),           // 手动清理记录值
+                new ValueVelocity(),                // 记录运动向量
+                new ValueTargetCount()              // 记录目标数量
                 //new ValueAttributePlus()
                 //new ValueSumMechanic()
         );

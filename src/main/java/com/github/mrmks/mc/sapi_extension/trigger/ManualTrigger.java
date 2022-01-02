@@ -3,33 +3,21 @@ package com.github.mrmks.mc.sapi_extension.trigger;
 import com.github.mrmks.mc.sapi_extension.event.ManualTriggerEvent;
 import com.google.common.collect.ImmutableList;
 import com.sucy.skill.api.Settings;
-import com.sucy.skill.dynamic.ComponentType;
-import com.sucy.skill.dynamic.custom.CustomTrigger;
 import com.sucy.skill.dynamic.custom.EditorOption;
 import org.bukkit.entity.LivingEntity;
 
 import java.util.List;
 import java.util.Map;
 
-public class ManualTrigger implements CustomTrigger<ManualTriggerEvent> {
-    @Override
-    public String getKey() {
-        return "Manual_Trigger";
-    }
+public class ManualTrigger extends CustomTrigger<ManualTriggerEvent> {
 
-    @Override
-    public String getDisplayName() {
-        return "Manual Trigger";
-    }
-
-    @Override
-    public ComponentType getType() {
-        return ComponentType.TRIGGER;
+    public ManualTrigger() {
+        super("manual trigger", ManualTriggerEvent.class);
     }
 
     @Override
     public String getDescription() {
-        return getDisplayName();
+        return "Apply ManualTrigger for each target";
     }
 
     @Override
@@ -37,11 +25,6 @@ public class ManualTrigger implements CustomTrigger<ManualTriggerEvent> {
         return ImmutableList.of(
                 EditorOption.text("key", "Key", "[key]The key which can trigger this", "key")
         );
-    }
-
-    @Override
-    public Class<ManualTriggerEvent> getEvent() {
-        return ManualTriggerEvent.class;
     }
 
     @Override
