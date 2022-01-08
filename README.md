@@ -145,3 +145,12 @@ SkillAPI中，value的记录是随玩家而变化的，跨触发器与技能可�
   |关键字|名称|类型|描述| 
   |:---:|:---:|:---:|:---|
   |key|Key|Text(key)|键|
+
+### Comment
+**Type: Mechanic**
+* 参数列表
+
+  |关键字|名称|类型|描述|
+  |:---:|:---:|:---:|:---|
+  |cmt|Comment|Text()|注释|
+  |skip|Skip|Dropbox\[false,true]|是否跳过注释的子组件|

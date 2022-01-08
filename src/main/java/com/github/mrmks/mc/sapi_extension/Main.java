@@ -5,6 +5,7 @@ import com.github.mrmks.mc.sapi_extension.compound.mechanic.*;
 import com.github.mrmks.mc.sapi_extension.compound.target.EachTarget;
 import com.github.mrmks.mc.sapi_extension.trigger.ManualTrigger;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
 import com.sucy.skill.SkillAPI;
 import com.sucy.skill.api.SkillPlugin;
 import com.sucy.skill.dynamic.ComponentRegistry;
@@ -12,7 +13,6 @@ import com.sucy.skill.dynamic.custom.CustomEffectComponent;
 import com.sucy.skill.dynamic.trigger.Trigger;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main extends JavaPlugin implements SkillPlugin {
@@ -45,7 +45,8 @@ public class Main extends JavaPlugin implements SkillPlugin {
                 new ValuePositionMechanic(),        // x,y,z,yaw,pitch,world
                 new ValueClearMechanic(),           // 手动清理记录值
                 //new ValueVelocity(),                // 记录运动向量
-                new ValueTargetCount()              // 记录目标数量
+                new ValueTargetCount(),              // 记录目标数量
+                new CommentMechanic()               // 注释
                 //new ValueAttributePlus()
                 //new ValueSumMechanic()
         );
@@ -54,9 +55,9 @@ public class Main extends JavaPlugin implements SkillPlugin {
     @SuppressWarnings("rawtypes")
     @Override
     public List<Trigger> getTriggers() {
-        List<Trigger> list = new ArrayList<>(ImmutableList.of(
+        List<Trigger> list = Lists.newArrayList(
                 new ManualTrigger()
-        ));
+        );
         list.removeIf(t -> ComponentRegistry.getTrigger(t.getKey()) != null);
         return list;
     }
