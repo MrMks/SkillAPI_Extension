@@ -11,6 +11,7 @@
  * [Value Position](#value-position)
  * [Value Clear](#value-clear)
  * [Value Target Count](#value-target-count)
+ * [Comment](#comment)
 ## Details
 ### Value Compare
 **Type: Condition**
