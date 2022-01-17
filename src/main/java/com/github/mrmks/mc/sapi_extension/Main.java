@@ -46,9 +46,9 @@ public class Main extends JavaPlugin implements SkillPlugin {
                 new ValueClearMechanic(),           // 手动清理记录值
                 //new ValueVelocity(),                // 记录运动向量
                 new ValueTargetCount(),              // 记录目标数量
-                new CommentMechanic()               // 注释
-                //new ValueAttributePlus()
-                //new ValueSumMechanic()
+                new CommentMechanic(),               // 注释
+                new TargetValueCopyMechanic(),
+                new ReverseTargetMechanic()
         );
     }
 

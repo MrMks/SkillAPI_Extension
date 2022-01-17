@@ -11,7 +11,9 @@
  * [Value Position](#value-position)
  * [Value Clear](#value-clear)
  * [Value Target Count](#value-target-count)
- * [Comment](#comment)
+ * [Comment](#comment)(0.4.3-build16)
+ * Target Value Copy(0.4.4-build17)
+ * Reverse Target(0.4.4-build17, Experiment)
 ## Details
 ### Value Compare
 **Type: Condition**
