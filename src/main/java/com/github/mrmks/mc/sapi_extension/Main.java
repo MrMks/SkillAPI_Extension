@@ -47,7 +47,7 @@ public class Main extends JavaPlugin implements SkillPlugin {
                 //new ValueVelocity(),                // 记录运动向量
                 new ValueTargetCount(),              // 记录目标数量
                 new CommentMechanic(),               // 注释
-                new TargetValueCopyMechanic(),
+                //new TargetValueCopyMechanic(),
                 new ReverseTargetMechanic()
         );
     }
