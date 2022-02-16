@@ -1,18 +1,23 @@
 package com.github.mrmks.mc.sapi_extension;
 
-import com.github.mrmks.mc.sapi_extension.compound.condition.ValueCompareCondition;
+import com.github.mrmks.mc.sapi_extension.compound.condition.*;
+import com.github.mrmks.mc.sapi_extension.compound.condition.fixer.NameCondition;
 import com.github.mrmks.mc.sapi_extension.compound.mechanic.*;
-import com.github.mrmks.mc.sapi_extension.compound.target.EachTarget;
-import com.github.mrmks.mc.sapi_extension.trigger.ManualTrigger;
+import com.github.mrmks.mc.sapi_extension.compound.mechanic.fixer.ValueManaMechanic;
+import com.github.mrmks.mc.sapi_extension.compound.target.*;
+import com.github.mrmks.mc.sapi_extension.trigger.*;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.sucy.skill.SkillAPI;
 import com.sucy.skill.api.SkillPlugin;
 import com.sucy.skill.dynamic.ComponentRegistry;
+import com.sucy.skill.dynamic.EffectComponent;
 import com.sucy.skill.dynamic.custom.CustomEffectComponent;
 import com.sucy.skill.dynamic.trigger.Trigger;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.List;
 
 public class Main extends JavaPlugin implements SkillPlugin {
@@ -34,6 +39,7 @@ public class Main extends JavaPlugin implements SkillPlugin {
 
     @Override
     public List<CustomEffectComponent> getComponents() {
+        coverComponents();
         return ImmutableList.of(
                 new ValueCompareCondition(),        // 双值比较
                 new ManualTriggerMechanic(),        // 手动触发器
@@ -50,6 +56,30 @@ public class Main extends JavaPlugin implements SkillPlugin {
                 //new TargetValueCopyMechanic(),
                 new ReverseTargetMechanic()
         );
+    }
+
+    private Method methodRegister;
+    public void coverComponents() {
+        if (methodRegister == null) {
+            try {
+                methodRegister = ComponentRegistry.class.getDeclaredMethod("register", EffectComponent.class);
+                methodRegister.setAccessible(true);
+            } catch (NoSuchMethodException e) {
+                // this should never happen;
+            }
+        }
+        if (methodRegister != null) {
+            try {
+                methodRegister.invoke(null, new NameCondition());
+                try {
+                    methodRegister.invoke(null, new ValueManaMechanic());
+                } catch (Throwable ignored) {
+                    // this is not a premium version of sapi, we will not register the value mana;
+                }
+            } catch (InvocationTargetException | IllegalAccessException e) {
+                // this should never happen
+            }
+        }
     }
 
     @SuppressWarnings("rawtypes")
