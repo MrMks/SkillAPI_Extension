@@ -13,6 +13,9 @@
  * [Value Target Count](#value-target-count)
  * [Comment](#comment)(0.4.3-build16)
  * Reverse Target(0.4.4-build17, Experiment)
+ * ~~Name Condition~~(0.4.5-build20, FIXER)
+ * ~~Value Mana Mechanic~~(0.4.5-build19, FIXER)
+ * Value Class Level(0.4.6-build21)
 ## Details
 ### Value Compare
 **Type: Condition**

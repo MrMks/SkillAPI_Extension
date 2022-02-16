@@ -54,7 +54,8 @@ public class Main extends JavaPlugin implements SkillPlugin {
                 new ValueTargetCount(),              // 记录目标数量
                 new CommentMechanic(),               // 注释
                 //new TargetValueCopyMechanic(),
-                new ReverseTargetMechanic()
+                new ReverseTargetMechanic(),
+                new ValueClassLevelMechanic()       // value class level
         );
     }
 
