@@ -16,6 +16,7 @@
  * ~~Name Condition~~(0.4.5-build20, FIXER)
  * ~~Value Mana Mechanic~~(0.4.5-build19, FIXER)
  * Value Class Level(0.4.6-build21)
+ * ~~Projectile Mechanic~~(0.4.7-build22, FIXER)
 ## Details
 ### Value Compare
 **Type: Condition**
