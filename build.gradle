@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'com.github.mrmks.mc'
-version '0.4.7-build22'
+version '0.4.8-build23'
 
 repositories {
     mavenCentral()
@@ -20,6 +20,7 @@ dependencies {
     compileOnly 'org.bukkit:craftbukkit:1.12.2'
     compileOnly 'com.sucy:SkillAPI:1.9-premium'
     compileOnly 'com.sucy:MCCore:1.67'
+    compileOnly 'org.ow2.asm:asm:5.+'
 }
 
 processResources {
@@ -37,5 +38,11 @@ processResources {
     // copy everything else except the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'plugin.yml'
+    }
+}
+
+jar {
+    manifest {
+        attributes "Agent-Class": "com.github.mrmks.mc.sapi_extension.inst.SkillAPIUnloadAgent"
     }
 }

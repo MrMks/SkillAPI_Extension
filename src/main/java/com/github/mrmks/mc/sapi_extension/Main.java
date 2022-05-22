@@ -56,7 +56,9 @@ public class Main extends JavaPlugin implements SkillPlugin {
                 new CommentMechanic(),               // 注释
                 //new TargetValueCopyMechanic(),
                 new ReverseTargetMechanic(),
-                new ValueClassLevelMechanic()       // value class level
+                new ValueClassLevelMechanic(),       // value class level
+                new CallMechanic()                      // cast another skill
+                //new DistanceFilterMechanic()        // distance filter
         );
     }
 

@@ -17,6 +17,7 @@
  * ~~Value Mana Mechanic~~(0.4.5-build19, FIXER)
  * Value Class Level(0.4.6-build21)
  * ~~Projectile Mechanic~~(0.4.7-build22, FIXER)
+ * Call Mechanic(0.4.8-build23)
 ## Details
 ### Value Compare
 **Type: Condition**
@@ -147,3 +148,9 @@ SkillAPI中，value的记录是随玩家而变化的，跨触发器与技能可�
   |:---:|:---:|:---:|:---|
   |cmt|Comment|Text()|注释|
   |skip|Skip|Dropbox\[false,true]|是否跳过注释的子组件|
+
+### Call
+**Type: Mechanic**
+* FromVersion 0.4.8-build23
+* 功能: 释放另一个技能，请注意不要形成递归导致服务器卡死
+
