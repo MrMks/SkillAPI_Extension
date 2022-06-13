@@ -3,6 +3,7 @@ package com.github.mrmks.mc.sapi_extension;
 import com.github.mrmks.mc.sapi_extension.compound.condition.*;
 import com.github.mrmks.mc.sapi_extension.compound.condition.fixer.NameCondition;
 import com.github.mrmks.mc.sapi_extension.compound.mechanic.*;
+import com.github.mrmks.mc.sapi_extension.compound.mechanic.fixer.LaunchMechanic;
 import com.github.mrmks.mc.sapi_extension.compound.mechanic.fixer.ProjectileMechanic;
 import com.github.mrmks.mc.sapi_extension.compound.mechanic.fixer.ValueManaMechanic;
 import com.github.mrmks.mc.sapi_extension.compound.target.*;
@@ -76,6 +77,7 @@ public class Main extends JavaPlugin implements SkillPlugin {
             try {
                 methodRegister.invoke(null, new NameCondition());
                 methodRegister.invoke(null, new ProjectileMechanic());
+                methodRegister.invoke(null, new LaunchMechanic());
                 try {
                     methodRegister.invoke(null, new ValueManaMechanic());
                 } catch (Throwable ignored) {
