@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'com.github.mrmks.mc'
-version '0.4.9-build24'
+version '0.4.10-build25'
 
 repositories {
     mavenCentral()
@@ -37,11 +37,5 @@ processResources {
     // copy everything else except the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'plugin.yml'
-    }
-}
-
-jar {
-    manifest {
-        attributes "Agent-Class": "com.github.mrmks.mc.sapi_extension.inst.SkillAPIUnloadAgent"
     }
 }

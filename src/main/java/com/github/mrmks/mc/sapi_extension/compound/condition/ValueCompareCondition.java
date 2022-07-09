@@ -32,22 +32,34 @@ public class ValueCompareCondition extends CustomCondition {
                         "expr",
                         "Expression",
                         "[expr]Compare two value with given method;EQ means equal, NE means not equal; GE(LE) means greater(less) than or equal; GT(LT) means greater(less) than",
-                        ImmutableList.of("EQ", "NE", "GE", "GT", "LE", "LT")
+                        ImmutableList.of("EQ", "NE", "GE", "GT", "LE", "LT", "TEXT_EQ")
                 )
         );
     }
 
     public boolean test(LivingEntity caster, int level, List<LivingEntity> targets) {
-        double v1 = getNum(caster, "value_1", 0);
-        double v2 = getNum(caster, "value_2", 0);
         String exp = settings.getString("expr");
-        switch (exp) {
-            case "EQ": return v1 == v2;
-            case "NE": return v1 != v2;
-            case "GE": return v1 >= v2;
-            case "GT": return v1 >  v2;
-            case "LE": return v1 <= v2;
-            case "LT": return v1 <  v2;
+        if (!exp.equals("TEXT_EQ")) {
+            double v1 = getNum(caster, "value_1", 0);
+            double v2 = getNum(caster, "value_2", 0);
+            switch (exp) {
+                case "EQ":
+                    return v1 == v2;
+                case "NE":
+                    return v1 != v2;
+                case "GE":
+                    return v1 >= v2;
+                case "GT":
+                    return v1 > v2;
+                case "LE":
+                    return v1 <= v2;
+                case "LT":
+                    return v1 < v2;
+            }
+        } else {
+            String v1 = getSettings().getString("value_1");
+            String v2 = getSettings().getString("value_2");
+            return filter(caster, caster, v1).equals(filter(caster, caster, v2));
         }
         return false;
     }
