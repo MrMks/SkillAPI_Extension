@@ -2,9 +2,12 @@ package com.github.mrmks.mc.sapi_extension.compound.condition;
 
 import com.github.mrmks.mc.sapi_extension.compound.CustomCondition;
 import com.google.common.collect.ImmutableList;
+import com.sucy.skill.dynamic.DynamicSkill;
 import com.sucy.skill.dynamic.custom.EditorOption;
 import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Player;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class ValueCompareCondition extends CustomCondition {
@@ -59,7 +62,12 @@ public class ValueCompareCondition extends CustomCondition {
         } else {
             String v1 = getSettings().getString("value_1");
             String v2 = getSettings().getString("value_2");
-            return filter(caster, caster, v1).equals(filter(caster, caster, v2));
+
+            HashMap<String, Object> map = DynamicSkill.getCastData(caster);
+            if (map.containsKey(v1)) v1 = map.get(v1).toString();
+            if (map.containsKey(v2)) v2 = map.get(v2).toString();
+
+            return v1.equals(v2);
         }
         return false;
     }
