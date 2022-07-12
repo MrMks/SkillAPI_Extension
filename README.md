@@ -18,6 +18,8 @@
  * Value Class Level(0.4.6-build21)
  * ~~Projectile Mechanic~~(0.4.7-build22, FIXER)
  * Call Mechanic(0.4.8-build23)
+ * ~~LaunchMechanic~~(0.4.9-build24, FIXER)
+ * Sound Custom Mechanic(0.4.11-build26)
 ## Details
 ### Value Compare
 **Type: Condition**
@@ -28,6 +30,7 @@
   |value_1|Value 1|Text(value)|-|
   |value_2|Value 2|Text(value)|-|
   |expr|Expression|Dropdown\[EQ,NE,GE,GT,LE,LT]|EQ:等于;NE不等于;GE:大于等于;GT:大于;LE:小于等于;LT:小于|
+* 更新: 自 0.4.10-build25, expr 新增 TEXT_EQ 选项, 比较两字符串是否相等
 ### Manual Trigger(Mechanic)
 **Type: Mechanic**
 * 参数列表

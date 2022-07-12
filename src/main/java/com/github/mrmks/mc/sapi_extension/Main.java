@@ -58,8 +58,9 @@ public class Main extends JavaPlugin implements SkillPlugin {
                 //new TargetValueCopyMechanic(),
                 new ReverseTargetMechanic(),
                 new ValueClassLevelMechanic(),       // value class level
-                new CallMechanic()                      // cast another skill
+                new CallMechanic(),                      // cast another skill
                 //new DistanceFilterMechanic()        // distance filter
+                new SoundCustomMechanic()
         );
     }
 
