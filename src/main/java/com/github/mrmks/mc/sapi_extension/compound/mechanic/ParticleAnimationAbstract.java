@@ -154,8 +154,16 @@ public abstract class ParticleAnimationAbstract extends CustomMechanic {
         @Override
         public void run()
         {
+            if (this.life >= this.duration)
+            {
+                cancel();
+            }
+
             for (int i = 0; i < steps; i++)
             {
+                // Update the lifespan of the animation
+                this.life++;
+
                 // Play the effect
                 int j = 0;
                 for (LivingEntity target : targets)
@@ -169,9 +177,6 @@ public abstract class ParticleAnimationAbstract extends CustomMechanic {
                     loc.subtract(temp);
                     //rotate(temp, rots[j++], -rots[j++]);
                 }
-
-                // Update the lifespan of the animation
-                this.life++;
 
                 // Apply transformations
                 rotate(offset, cos, sin);
@@ -207,7 +212,7 @@ public abstract class ParticleAnimationAbstract extends CustomMechanic {
         }
     }
 
-    protected class VectorWrapper extends Vector {
+    protected static class VectorWrapper extends Vector {
         private final Vector x,y,z;
         public VectorWrapper(double yaw, double pitch){
             yaw = Math.max(Math.min(90,yaw), -90);
