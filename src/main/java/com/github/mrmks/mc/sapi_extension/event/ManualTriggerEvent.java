@@ -19,9 +19,15 @@ public class ManualTriggerEvent extends Event {
     }
 
     public boolean isMatch(String nKey) {
-        boolean t = key.equals(nKey);
-        match = match || t;
-        return t;
+        return !match && (match = key.equals(nKey));
+    }
+
+    public void markResponded() {
+        match = true;
+    }
+
+    public String getKey() {
+        return key;
     }
 
     public boolean isMatch() {

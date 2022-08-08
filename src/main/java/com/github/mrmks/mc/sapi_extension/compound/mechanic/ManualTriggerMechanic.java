@@ -17,7 +17,7 @@ public class ManualTriggerMechanic extends CustomMechanic {
 
     @Override
     public String getDisplayName() {
-        return "Manual Trigger";
+        return "Manual Trigger, There are only one trigger response to this if you set many triggers with same key";
     }
 
     @Override
