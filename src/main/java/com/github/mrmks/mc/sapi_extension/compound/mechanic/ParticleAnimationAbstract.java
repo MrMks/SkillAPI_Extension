@@ -65,6 +65,10 @@ public abstract class ParticleAnimationAbstract extends CustomMechanic {
             Settings var4 = new Settings(this.settings);
             var4.set("particles", this.parseValues(livingEntity, "particles", i, 1.0D), 0.0D);
             var4.set("radius", this.parseValues(livingEntity, "radius", i, 0.0D), 0.0D);
+            var4.set("dx", this.getNum(livingEntity, "dx", 0.0D));
+            var4.set("dy", this.getNum(livingEntity, "dy", 0.0D));
+            var4.set("dz", this.getNum(livingEntity, "dz", 0.0D));
+            var4.set("speed", this.getNum(livingEntity, "speed", 0.0D));
             var4.set("level", i);
             new ParticleTask(livingEntity, list, i, var4);
             return true;
@@ -109,18 +113,18 @@ public abstract class ParticleAnimationAbstract extends CustomMechanic {
             this.targets = targets;
             this.settings = settings;
 
-            double yaw = settings.getDouble("yaw", 0);
-            double pitch = settings.getDouble("pitch", 0);
+            double yaw = getNum(caster, "yaw", 0);
+            double pitch = getNum(caster, "pitch", 0);
             this.wrapper = new VectorWrapper(yaw, pitch);
 
-            this.forward = settings.getDouble(FORWARD, 0);
-            this.upward = settings.getDouble(UPWARD, 0);
-            this.right = settings.getDouble(RIGHT, 0);
+            this.forward = getNum(caster, FORWARD, 0);
+            this.upward = getNum(caster, UPWARD, 0);
+            this.right = getNum(caster, RIGHT, 0);
 
-            this.steps = settings.getInt(STEPS, 1);
+            this.steps = (int) getNum(caster, STEPS, 1);
             this.freq = (int) (settings.getDouble(FREQ, 1.0) * 20);
-            this.angle = settings.getInt(ANGLE, 0);
-            this.startAngle = settings.getInt(START, 0);
+            this.angle = (int) getNum(caster, ANGLE, 0);
+            this.startAngle = (int) getNum(caster, START, 0);
             this.duration = steps * (int) (20 * parseValues(caster, DURATION, level, 3.0));
             this.life = 0;
             this.ht = parseValues(caster, H_TRANS, level, 0);
@@ -215,8 +219,6 @@ public abstract class ParticleAnimationAbstract extends CustomMechanic {
     protected static class VectorWrapper extends Vector {
         private final Vector x,y,z;
         public VectorWrapper(double yaw, double pitch){
-            yaw = Math.max(Math.min(90,yaw), -90);
-            pitch = Math.max(Math.min(90,pitch), -90);
             x = initVector(yaw, pitch);
             y = initVector(yaw, pitch + 90);
             z = initVector(yaw + 90, 0);

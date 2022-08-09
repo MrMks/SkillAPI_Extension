@@ -43,6 +43,7 @@ public class ParticleAnimationReflection extends ParticleAnimationAbstract {
                 "Spell",
                 "Splash",
                 "Suspend",
+                "Totem",
                 "Town Aura",
                 "Water Drop",
                 "Water Wake",
