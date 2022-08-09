@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'com.github.mrmks.mc'
-version '0.5.2-b29'
+version '0.5.2-b30'
 
 repositories {
     mavenCentral()

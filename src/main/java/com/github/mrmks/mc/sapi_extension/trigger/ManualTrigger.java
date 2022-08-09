@@ -26,7 +26,7 @@ public class ManualTrigger extends CustomTrigger<ManualTriggerEvent> {
     public List<EditorOption> getOptions() {
         return ImmutableList.of(
                 EditorOption.text("key", "Key", "[key]The key which can trigger this", "key"),
-                EditorOptionHelper.dropdown("delay", "Should we pass the key check and let child-components to check it? If you set this to true, you can check it with the key \"api-key\" and make sure to set a value \"api-result\" smaller that 0 if you can't handle this key, or we will mark the event as been responded.", ImmutableList.of("false", "true"))
+                EditorOptionHelper.dropdown("delay", "Should we pass the key check and let child-components to check it? Use Manual Match Condition to compare the key.", ImmutableList.of("false", "true"))
         );
     }
 

@@ -38,6 +38,7 @@ public class Main extends JavaPlugin implements SkillPlugin {
         return ImmutableList.of(
                 new ValueCompareCondition(),        // 双值比较
                 new ManualTriggerMechanic(),        // 手动触发器
+                new ManualMatchCondition(),         // 延迟的比较方法
                 new EachTarget(),                   // 为每个对象应用子组件
                 new ValueDivideMechanic(),          // 除法
                 new ValueLogarithmMechanic(),       // Log_a_b
