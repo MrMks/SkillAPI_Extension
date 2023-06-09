@@ -58,7 +58,8 @@ public class Main extends JavaPlugin implements SkillPlugin {
                 new ParticleAnimation(),
                 new ParticleAnimationBukkit(),
                 new ParticleAnimationMaterial(),
-                new ParticleAnimationReflection()
+                new ParticleAnimationReflection(),
+                new EffekActionMechanic()
         );
     }
 

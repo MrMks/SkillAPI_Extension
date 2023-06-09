@@ -1,7 +1,7 @@
 # SkillAPI_Extension
 
-**Warning**: From 0.5.1-b27, we remove all FIXER in this extension, please use the SkillAPI modified by us to get those fixes.  
-**警告**: 自 0.5.1-b27 版本，我们移除了此附属中所有的 FIXER，请使用我们修改过的 SkillAPI 来获取这些修复。
+**Warn**: From 0.5.1-b27, we remove all FIXER in this extension, please use the SkillAPI modified by us to get those fixes.  
+**告知**: 自 0.5.1-b27 版本，我们移除了此附属中所有的 FIXER，请使用我们修改过的 SkillAPI 来获取这些修复。
 
 ## Components
  * [Value Compare](#value-compare)
@@ -21,6 +21,7 @@
  * Call Mechanic(0.4.8-build23)
  * Sound Custom Mechanic(0.4.11-build26)
  * Particle Animation A/B/M/R (0.5.1-b27)
+ * Effek Command Wrapper (0.5.3-b32)
 ## Details
 ### Value Compare
 **Type: Condition**
